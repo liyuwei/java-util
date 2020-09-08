@@ -1,5 +1,7 @@
 package com.base.javautil.time;
 
+import java.text.ParseException;
+
 /**
  * @ Author     ：l.yw
  * @ Date       ：Created in 18:25 2020-09-07
@@ -12,6 +14,6 @@ public interface ITimeUtil {
 
     String stampToDateStr(long time);
 
-    long dateStrToStamp(String dateStr);
+    long dateStrToStamp(String dateStr) throws ParseException;
 
 }

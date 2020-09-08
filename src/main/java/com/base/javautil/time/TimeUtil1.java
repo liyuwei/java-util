@@ -1,5 +1,6 @@
 package com.base.javautil.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,7 +14,6 @@ public class TimeUtil1 implements ITimeUtil {
     public String getName() {
         return "TimeUtil1";
     }
-
 
 
     public static final SimpleDateFormat sdf = new SimpleDateFormat(DATE_TIME_FORMAT);
@@ -30,7 +30,9 @@ public class TimeUtil1 implements ITimeUtil {
     }
 
     @Override
-    public long dateStrToStamp(String dateStr) {
-        return 0;
+    public long dateStrToStamp(String dateStr) throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = simpleDateFormat.parse(dateStr);
+        return date.getTime();
     }
 }
